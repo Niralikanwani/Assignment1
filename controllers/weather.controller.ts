@@ -97,8 +97,8 @@ export const getweatherinfo = async (
     const data: any[] = Collection.data;
     // console.log(data);
     //const data: any[] = weatherdata.collections[0].data;
-    const min=20;
-    const max=30;
+    const min=10;
+    const max=40;
     var weather:any[] = [];
     data.forEach(element => {
       const temp=element.data[0].temp;
