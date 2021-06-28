@@ -91,9 +91,12 @@ export const getweatherinfo = async (
 ) => {  
   try {
     const page = req.query.page || 1;
-    const rawdata:any = fs.readFileSync('db.json');
-    const weatherdata = JSON.parse(rawdata);
-    const data: any[] = weatherdata.collections[0].data;
+    const Collection = db.getCollection('weatherData');
+    // const rawdata:any = fs.readFileSync('db.json');
+    // const weatherdata = JSON.parse(rawdata);
+    const data: any[] = Collection.data;
+    // console.log(data);
+    //const data: any[] = weatherdata.collections[0].data;
     const min=20;
     const max=30;
     var weather:any[] = [];
